@@ -147,8 +147,9 @@ def train(opt, hmar_tracker, train_data_loader, optimizer, scheduler):
                 train_loss.update(loss.item(), BS)
                 
                 pbar.set_postfix({"total_loss"   :'{0:.4f}'.format(loss.detach().cpu().numpy(), 2) })
+                print('step ' , step_)
             
-                if((step_+399)%400==0):
+                if((step_+199)%200==0 and step_ != 1):
                     hmar_tracker.eval()
                     x = opt.dataset
                     opt.dataset        = "posetrack"
@@ -227,7 +228,7 @@ if __name__ == '__main__':
     opt.seed = seed
     wandb.init(project="HMAR_tracking", tags=opt.tags, settings=wandb.Settings(start_method="fork"))
     wandb.config.update(opt)
-    try: os.system("mkdir save")
+    try: os.mkdir("save")
     except: pass
     
     opt.wandb_name     = wandb.run.name

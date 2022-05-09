@@ -62,11 +62,14 @@ def test_tracker(opt, hmar_tracker):
 
     try:    os.system("mkdir out");os.system("mkdir out/" + opt.storage_folder); os.system("mkdir out/" + opt.storage_folder + "/results")
     except: pass
+    iiii =0
 
     for num_video, video_name in tqdm(enumerate(opt.videos_seq)):
+        
        
         if(opt.dataset=="demo"): track = joblib.load(opt.dataset_path + '/' + str(video_name) + '/hmar_' + video_name + '.pickle')
         else:                    track = joblib.load('_DATA/detections/hmar_' + opt.dataset + "_" + str(video_name) + '.pickle')
+        print('opt.dataset' , opt.dataset)
 
         final_results        = []
         final_results_dic    = {}
@@ -174,7 +177,11 @@ def test_tracker(opt, hmar_tracker):
             
             if(opt.save): 
                 new_visuals_dic, refined_eval_dic = refine_visuals(final_visuals_dic)
-                make_video(HMAR_model, opt.save, opt.render, opt, video_name, new_visuals_dic)                 
+                make_video(HMAR_model, opt.save, opt.render, opt, video_name, new_visuals_dic)
+        iiii+=1
+        print('i ',iiii)
+        if iiii>10 :return
+                             
     
 
 if __name__ == '__main__':
