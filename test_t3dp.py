@@ -180,7 +180,7 @@ def test_tracker(opt, hmar_tracker):
                 make_video(HMAR_model, opt.save, opt.render, opt, video_name, new_visuals_dic)
         iiii+=1
         print('i ',iiii)
-        if iiii>10 :return
+        if iiii>100 :return
                              
     
 
