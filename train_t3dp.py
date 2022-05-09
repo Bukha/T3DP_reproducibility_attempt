@@ -149,7 +149,7 @@ def train(opt, hmar_tracker, train_data_loader, optimizer, scheduler):
                 pbar.set_postfix({"total_loss"   :'{0:.4f}'.format(loss.detach().cpu().numpy(), 2) })
                 print('step ' , step_)
             
-                if((step_+199)%200==0 and step_ != 1):
+                if((step_+999)%1000==0 and step_ != 1):
                     hmar_tracker.eval()
                     x = opt.dataset
                     opt.dataset        = "posetrack"
