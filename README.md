@@ -5,4 +5,4 @@ This is a reproducibility attempt of 'Tracking People with 3D Representations'
 
 ### Set-up Instructions 
 You can find the instructions to set up the environment, download the data and train or run the demos in the following link
- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)] (https://drive.google.com/file/d/1JzO9iEWZ447j-i6_nBtNM-wMtBR1obkh/view?usp=sharing)
+ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)] (https://colab.research.google.com/drive/1GI7u-gDGUiq68Ki6tilXKsCVTcJB_u76?usp=sharing)
